@@ -1,0 +1,141 @@
+
+workspace_auto_back_and_forth no
+#workspace_layout default|stacking|tabbed
+workspace_layout default
+force_xinerama no
+popup_during_fullscreen smart
+#show_edge_borders both
+#new_window none
+#smart_borders on
+#gaps inner 0
+#gaps outer 0
+
+# Mod4 = Super Left (Windows Key Left - keycode 133)
+set $mod Mod4
+#set $mod 133
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+######################################################################
+# Bindings
+
+# reload the configuration file
+bindsym $mod+Shift+9 reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+0 restart
+
+# exits i3 (logs you out of your X session)
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Yes, exit i3' 'gnome-session-quit --force --logout'"
+
+# loads and lock the screensaver
+bindsym $mod+Shift+l exec "gnome-screensaver-command -l"
+
+######
+# cinnamon-session for i3
+# https://github.com/krusipo/cinnamon-i3
+# exit i3 (logs you out of your X session)
+#bindsym $mod+Shift+e exec "cinnamon-session-quit --logout"
+
+# unofficial binding suggestions
+#bindsym $mod+Shift+h exec "cinnamon-session-quit --power-off"
+#bindsym $mod+Shift+l exec "cinnamon-screensaver-command -l"
+######
+
+# kill focused window
+bindsym $mod+5 kill
+
+# start dmenu (a program launcher)
+#bindsym $mod+d exec dmenu_run -fn "Monospace-14:normal"
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# install
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# change window focus
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+
+# move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+u layout toggle
+bindsym $mod+i layout toggle all
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+# Ex. Let's say that you have two tiles in background and one floating window
+# which currently has the focus: you press the "focus mode_toggle" shortcut and 
+# one of the 2 tiles in background gets the focus. At this point you can navigate
+# through the tiles using "focus left" or "focus right". To give focus to the floating
+# window you press again "focus mode_toggle". If you have more than one floating window
+# you can navigate through them with "focus left" and "focus right" as you did for tiles
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+c focus child
+
+# start a terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec gnome-terminal --zoom=1.2
+bindsym $mod+Return exec gnome-terminal
+
+# Takes a screenshot
+#bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/screenshots/'
+# of the whole screen
+bindsym Print exec gnome-screenshot
+# of the focused window
+bindsym Shift+Print exec gnome-screenshot -w
+
+######################################################################
+
+
+######################################################################
+# Mouse
+
+# mouse focus
+focus_follows_mouse no
+
+# mouse warping
+#mouse_warping none
+
+# The middle button over a titlebar kills the window
+#bindsym --release button2 kill
+
+# The middle button and a modifer over any part of the window kills the window
+bindsym --whole-window $mod+button2 kill
+
+# The right button toggles floating
+#bindsym button3 floating toggle
+bindsym $mod+button3 floating toggle
+
+# The side buttons move the window around
+#bindsym button9 move left
+#bindsym button8 move right
+
+######################################################################

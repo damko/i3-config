@@ -1,0 +1,14 @@
+
+######################################################################
+# Always floating windows
+
+for_window [window_role="pop-up"] floating enable
+for_window [class="Lxappearance"] floating enable, border normal
+for_window [class="Seahorse"] floating enable, border normal
+for_window [class="Tor Browser"] floating enable, border normal
+for_window [class="Gedit"] floating enable, border normal
+for_window [class="Gnome-calculator"] floating enable, border normal
+for_window [class="Gimp"] floating enable, border normal
+for_window [class="Pidgin"] floating enable, border normal
+for_window [class="pavucontrol"] floating enable, border normal
+######################################################################

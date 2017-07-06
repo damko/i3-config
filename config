@@ -1,0 +1,453 @@
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+#
+# If you want to generate a new config file, delete
+# this file and run i3-config-wizard
+
+
+
+workspace_auto_back_and_forth no
+#workspace_layout default|stacking|tabbed
+workspace_layout default
+force_xinerama no
+popup_during_fullscreen smart
+#show_edge_borders both
+#new_window none
+#smart_borders on
+#gaps inner 0
+#gaps outer 0
+
+# Mod4 = Super Left (Windows Key Left - keycode 133)
+set $mod Mod4
+#set $mod 133
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+######################################################################
+# Bindings
+
+# reload the configuration file
+bindsym $mod+Shift+9 reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+0 restart
+
+# exits i3 (logs you out of your X session)
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Yes, exit i3' 'gnome-session-quit --force --logout'"
+
+# loads and lock the screensaver
+bindsym $mod+Shift+l exec "gnome-screensaver-command -l"
+
+######
+# cinnamon-session for i3
+# https://github.com/krusipo/cinnamon-i3
+# exit i3 (logs you out of your X session)
+#bindsym $mod+Shift+e exec "cinnamon-session-quit --logout"
+
+# unofficial binding suggestions
+#bindsym $mod+Shift+h exec "cinnamon-session-quit --power-off"
+#bindsym $mod+Shift+l exec "cinnamon-screensaver-command -l"
+######
+
+# kill focused window
+bindsym $mod+5 kill
+
+# start dmenu (a program launcher)
+#bindsym $mod+d exec dmenu_run -fn "Monospace-14:normal"
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# install
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# change window focus
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+
+# move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+u layout toggle
+bindsym $mod+i layout toggle all
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+# Ex. Let's say that you have two tiles in background and one floating window
+# which currently has the focus: you press the "focus mode_toggle" shortcut and 
+# one of the 2 tiles in background gets the focus. At this point you can navigate
+# through the tiles using "focus left" or "focus right". To give focus to the floating
+# window you press again "focus mode_toggle". If you have more than one floating window
+# you can navigate through them with "focus left" and "focus right" as you did for tiles
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+c focus child
+
+# start a terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec gnome-terminal --zoom=1.2
+bindsym $mod+Return exec gnome-terminal
+
+# Takes a screenshot
+#bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/screenshots/'
+# of the whole screen
+bindsym Print exec gnome-screenshot
+# of the focused window
+bindsym Shift+Print exec gnome-screenshot -w
+
+######################################################################
+
+
+######################################################################
+# Mouse
+
+# mouse focus
+focus_follows_mouse no
+
+# mouse warping
+#mouse_warping none
+
+# The middle button over a titlebar kills the window
+#bindsym --release button2 kill
+
+# The middle button and a modifer over any part of the window kills the window
+bindsym --whole-window $mod+button2 kill
+
+# The right button toggles floating
+#bindsym button3 floating toggle
+bindsym $mod+button3 floating toggle
+
+# The side buttons move the window around
+#bindsym button9 move left
+#bindsym button8 move right
+
+######################################################################
+
+######################################################################
+# resize window via kdb (you can also use the mouse for that)
+
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        #bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Resize for window: I'm not sure this works
+#for_window [class="Firefox"] resize set 640 480
+######################################################################
+
+####################################################
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below. ISO 10646 = Unicode
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, if you need a lot of unicode glyphs or
+# right-to-left text rendering, you should instead use pango for rendering and
+# chose a FreeType font, such as:
+#font pango:DejaVu Bitstream Vera Sans Mono 11
+#font pango:System San Francisco Display 11
+#font pango:Bitstream Vera Sans 10
+font pango:Liberation Mono Regular 10
+
+####################################################
+
+######################################################################
+# Monitors and Workspaces
+
+###############################################
+# Left pivoted HP 24" Monitor - Digital Port
+###############################################
+
+	set $wsp_L0 "1:L0"
+	set $wsp_L1 "2:L1"
+	set $wsp_L2 "3:L2"
+	set $wsp_L3 "4:L3"
+
+	# Assign workspace to screen
+	workspace $wsp_L0 output DP-2
+	workspace $wsp_L1 output DP-2
+	workspace $wsp_L2 output DP-2
+	workspace $wsp_L3 output DP-2
+
+	# Bindings for workspace focus
+	bindsym $mod+Ctrl+7 workspace $wsp_L0
+	bindsym $mod+Ctrl+g workspace $wsp_L1
+	bindsym $mod+Ctrl+h workspace $wsp_L2
+	bindsym $mod+Ctrl+m workspace $wsp_L3
+
+	# move focused container to workspace: Mod1 == Alt. Workspace focus follows the window
+	bindsym $mod+Mod1+7 move container to workspace $wsp_L0; workspace $wsp_L0
+	bindsym $mod+Mod1+g move container to workspace $wsp_L1; workspace $wsp_L1
+	bindsym $mod+Mod1+h move container to workspace $wsp_L2; workspace $wsp_L2
+	bindsym $mod+Mod1+m move container to workspace $wsp_L3; workspace $wsp_L3
+
+
+
+
+
+###############################################
+# Central HP 24" Monitor - Digital Port
+###############################################
+	set $wsp_C0 "5:C0"
+	set $wsp_C1 "6:C1"
+	set $wsp_C2 "7:C2"
+	set $wsp_C3 "8:C3"
+
+	# Assign workspace to screen
+	workspace $wsp_C0 output DP-1
+	workspace $wsp_C1 output DP-1
+	workspace $wsp_C2 output DP-1
+	workspace $wsp_C3 output DP-1
+
+	# Bindings for workspace focus
+	bindsym $mod+Ctrl+8 workspace $wsp_C0
+	bindsym $mod+Ctrl+c workspace $wsp_C1
+	bindsym $mod+Ctrl+t workspace $wsp_C2
+	bindsym $mod+Ctrl+w workspace $wsp_C3
+
+	# move focused container to workspace: Mod1 == Alt. Workspace focus follows the window
+	bindsym $mod+Mod1+8 move container to workspace $wsp_C0; workspace $wsp_C0
+	bindsym $mod+Mod1+c move container to workspace $wsp_C1; workspace $wsp_C1
+	bindsym $mod+Mod1+t move container to workspace $wsp_C2; workspace $wsp_C2
+	bindsym $mod+Mod1+w move container to workspace $wsp_C3; workspace $wsp_C3
+
+	# assign a program to workspace
+	assign [class="Sublime_text"] $wsp_C0
+	assign [class="sublime_text"] $wsp_C0
+	assign [class="Zend Studio"] $wsp_C1
+	assign [class="Thunderbird"] $wsp_C3
+
+
+
+
+###############################################
+# Right pivoted HP 24" Monitor - Digital Port
+###############################################
+	set $wsp_R0 "9:R0"
+	set $wsp_R1 "10:R1"
+	set $wsp_R2 "11:R2"
+	set $wsp_R3 "12:R3"
+	set $wsp_R4 "13:Chat"
+	set $wsp_R5 "14:Media"
+
+	# Assign workspace to screen
+	workspace $wsp_R0 output DP-3
+	workspace $wsp_R1 output DP-3
+	workspace $wsp_R2 output DP-3
+	workspace $wsp_R3 output DP-3
+	workspace $wsp_R4 output DP-3
+	workspace $wsp_R5 output DP-3
+
+	# Bindings for workspace focus
+	bindsym $mod+Ctrl+9 workspace $wsp_R0
+	bindsym $mod+Ctrl+r workspace $wsp_R1
+	bindsym $mod+Ctrl+n workspace $wsp_R2
+	bindsym $mod+Ctrl+v workspace $wsp_R3
+	bindsym $mod+Ctrl+s workspace $wsp_R4
+	bindsym $mod+Ctrl+z workspace $wsp_R5
+
+
+	# move focused container to workspace: Mod1 == Alt. Workspace focus follows the window
+	bindsym $mod+Mod1+9 move container to workspace $wsp_R0; workspace $wsp_R0
+	bindsym $mod+Mod1+r move container to workspace $wsp_R1; workspace $wsp_R1
+	bindsym $mod+Mod1+n move container to workspace $wsp_R2; workspace $wsp_R2
+	bindsym $mod+Mod1+v move container to workspace $wsp_R3; workspace $wsp_R3
+	bindsym $mod+Mod1+s move container to workspace $wsp_R4; workspace $wsp_R4
+	bindsym $mod+Mod1+z move container to workspace $wsp_R5; workspace $wsp_R5
+
+	# assign a program to workspace
+	assign [class="Skype"] $wsp_R4
+	assign [class="Cutegram"] $wsp_R4
+	assign [class="cutegram"] $wsp_R4
+	assign [class="Gitter"] $wsp_R3
+	assign [class="gitter"] $wsp_R4
+	assign [class="Xchat"] $wsp_R4
+	assign [class="Totem"] $wsp_R4
+	assign [class="Qtox"] $wsp_R4
+	assign [class="Gajim"] $wsp_R4
+	assign [class="Rambox"] $wsp_R4
+	assign [class="Vlc"] $wsp_R5
+
+######################################################################
+
+######################################################################
+# Always floating windows
+
+for_window [window_role="pop-up"] floating enable
+for_window [class="Lxappearance"] floating enable, border normal
+for_window [class="Seahorse"] floating enable, border normal
+for_window [class="Tor Browser"] floating enable, border normal
+for_window [class="Gedit"] floating enable, border normal
+for_window [class="Gnome-calculator"] floating enable, border normal
+for_window [class="Gimp"] floating enable, border normal
+for_window [class="Pidgin"] floating enable, border normal
+for_window [class="pavucontrol"] floating enable, border normal
+######################################################################
+
+######################################################################
+# Scratchpad stuff
+
+# Moves the currently focused window to the scratchpad
+#bindsym $mod+prior move scratchpad
+# keycode 112 = PGUP
+bindcode $mod+112 move scratchpad
+
+# Show the first scratchpad window
+#bindsym $mod+next scratchpad show
+# keycode 117 = PGDOWN
+bindcode $mod+117 scratchpad show
+
+# Moves all floating windows to the scratchpad
+bindsym $mod+shift+x [floating] move scratchpad
+
+# Sends specific windows directly to scratchpad as soon as they open
+for_window [title="terminal4scratchpad"] move scratchpad
+
+# Show the specific scratchpad window, if any is present.
+bindsym mod4+shift+g [title="^Gajim"] scratchpad show
+bindsym mod4+shift+t [title="Thunderbird$"] scratchpad show
+bindsym mod4+shift+c [title="^damko@nitro"] scratchpad show
+
+######################################################################
+
+######################################################################
+# Window colors
+
+# Color constants
+set $black #000000
+set $arch_blue #1793D1
+set $debian_red #D70A53
+set $manjaro_green #2ECC71
+set $plasma_green #18B092
+set $matrix_green #00FF00
+set $mint_green #5FAA24
+set $numix #C84433
+set $ubuntu_orange #F37320
+set $vertex_dark #2C6FF0
+set $white #ffffff
+set $green #00a600
+set $dark_borduau #440000
+set $light_green #adffde
+set $light_blue #0091e2
+set $dark_gray #1f222d
+set $gray #a5a5a5
+set $light_gray #d8d8d8
+set $weird_gray #a9cccd
+set $red #ff0000
+set $ducky #ffcc00
+set $ocra #c8bb2f
+set $purple #e400ff
+#
+set $base00 #101218
+set $base01 #1f222d
+set $base02 #252936
+set $base03 #7780a1
+set $base04 #C0C5CE
+set $base05 #d1d4e0
+set $base06 #C9CCDB
+set $base07 #ffffff
+set $base08 #ee829f
+set $base09 #f99170
+set $base0A #ffefcc
+set $base0B #a5ffe1
+set $base0C #97e0ff
+set $base0D #97bbf7
+set $base0E #c0b7f9
+set $base0F #fcc09e
+
+#                       border        background    text         indicator
+client.focused          $white        $light_blue   $white       $purple
+client.focused_inactive $white        $weird_gray   $dark_gray   $purple
+client.unfocused        $white        $gray         $dark_gray   $purple
+client.urgent           $white        $base08       $dark_gray   $purple
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+        #status_command i3status
+	position top
+	#separator_symbol " | "
+	strip_workspace_numbers yes
+	colors {
+		#separator $base03
+		separator $black
+		#background $dark_borduau
+		background $ocra
+		statusline $black
+		#statusline $base05
+		#                  border        background      text
+		focused_workspace  $white   	 $light_blue     $white
+		active_workspace   $base03       $base02         $light_blue
+		inactive_workspace $base03       $base02         $base03
+		urgent_workspace   $base03       $base02         $base08
+	}
+}
+
+######################################################################
+
+######################################################################
+# Autostart applications
+#
+# DISABLED
+#exec --no-startup-id nm-applet		# network manager systray
+#exec --no-startup-id gksu nm-applet	# example for how to launch an app as root
+#exec --no-startup-id qtox
+#exec --no-startup-id gitter
+#exec /home/damko/applications/ricochet
+#exec --no-startup-id glipper	# clipboard manager
+#exec_always parcellite			# clipboard manager
+#exec --no-startup-id gajim
+#exec --no-startup-id rambox
+#exec --no-startup-id nextcloud
+#exec --no-startup-id insync
+
+
+exec gnome-terminal --title="terminal4scratchpad" --hide-menubar &> /dev/null
+exec_always gnome-settings-daemon &	# starts gnome3 settings daemon
+exec_always gnome-screensaver &		# starts gnome3 screensaver daemon
+exec_always --no-startup-id tracker daemon -t all
+exec_always --no-startup-id tracker daemon -s
+exec --no-startup-id pasystray 		# pulseaudio systray. use pavucontrol to fine tune pulseaudio
+exec --no-startup-id workrave		# this enables kbd and mouse statistics
+
+
+######################################################################

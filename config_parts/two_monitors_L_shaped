@@ -1,0 +1,113 @@
+
+######################################################################
+# Monitors and Workspaces
+
+###############################################
+# laptop Monitor - LVDS1
+###############################################
+# IS OFF
+
+
+###############################################
+# Central HP 24" Monitor - DP1
+###############################################
+
+    # Set workspaces
+    set $wsp_L0 "1:L0"
+    set $wsp_L1 "2:L1"
+    set $wsp_L2 "3:L2"
+    set $wsp_L3 "4:L3"
+
+    set $wsp_C0 "5:C0"
+    set $wsp_C1 "6:C1"
+    set $wsp_C2 "7:C2"
+    set $wsp_C3 "8:C3"
+    
+    # Assign workspace to screen
+    workspace $wsp_L0 output DP1
+    workspace $wsp_L1 output DP1
+    workspace $wsp_L2 output DP1
+    workspace $wsp_L3 output DP1
+
+    workspace $wsp_C0 output DP1
+    workspace $wsp_C1 output DP1
+    workspace $wsp_C2 output DP1
+    workspace $wsp_C3 output DP1
+
+    # Bindings for workspace focus
+    bindsym $mod+Ctrl+7 workspace $wsp_L0
+    bindsym $mod+Ctrl+g workspace $wsp_L1
+    bindsym $mod+Ctrl+h workspace $wsp_L2
+    bindsym $mod+Ctrl+m workspace $wsp_L3
+
+    bindsym $mod+Ctrl+8 workspace $wsp_C0
+    bindsym $mod+Ctrl+c workspace $wsp_C1
+    bindsym $mod+Ctrl+t workspace $wsp_C2
+    bindsym $mod+Ctrl+w workspace $wsp_C3
+    
+    # move focused container to workspace: Mod1 == Alt. Workspace focus follows the window
+    bindsym $mod+Mod1+7 move container to workspace $wsp_L0; workspace $wsp_L0
+    bindsym $mod+Mod1+g move container to workspace $wsp_L1; workspace $wsp_L1
+    bindsym $mod+Mod1+h move container to workspace $wsp_L2; workspace $wsp_L2
+    bindsym $mod+Mod1+m move container to workspace $wsp_L3; workspace $wsp_L3
+
+    bindsym $mod+Mod1+8 move container to workspace $wsp_C0; workspace $wsp_C0
+    bindsym $mod+Mod1+c move container to workspace $wsp_C1; workspace $wsp_C1
+    bindsym $mod+Mod1+t move container to workspace $wsp_C2; workspace $wsp_C2
+    bindsym $mod+Mod1+w move container to workspace $wsp_C3; workspace $wsp_C3
+
+	# assign a program to workspace
+	assign [class="Sublime_text"] $wsp_C0
+	assign [class="sublime_text"] $wsp_C0
+	assign [class="Zend Studio"] $wsp_C1
+	assign [class="Thunderbird"] $wsp_C3
+
+###############################################
+# Right pivoted HP 24" Monitor - VGA1
+###############################################
+
+    # Set workspaces
+    set $wsp_R0 "9:R0"
+    set $wsp_R1 "10:R1"
+    set $wsp_R2 "11:R2"
+    set $wsp_R3 "12:R3"
+    set $wsp_R4 "13:Chat"
+    set $wsp_R5 "14:Media"
+
+    # Assign workspace to screen
+    workspace $wsp_R0 output VGA1
+    workspace $wsp_R1 output VGA1
+    workspace $wsp_R2 output VGA1
+    workspace $wsp_R3 output VGA1
+    workspace $wsp_R4 output VGA1
+    workspace $wsp_R5 output VGA1
+
+    # Bindings for workspace focus
+    bindsym $mod+Ctrl+9 workspace $wsp_R0
+    bindsym $mod+Ctrl+r workspace $wsp_R1
+    bindsym $mod+Ctrl+n workspace $wsp_R2
+    bindsym $mod+Ctrl+v workspace $wsp_R3
+    bindsym $mod+Ctrl+s workspace $wsp_R4
+    bindsym $mod+Ctrl+z workspace $wsp_R5
+
+    # move focused container to workspace: Mod1 == Alt. Workspace focus follows the window
+    bindsym $mod+Mod1+9 move container to workspace $wsp_R0; workspace $wsp_R0
+    bindsym $mod+Mod1+r move container to workspace $wsp_R1; workspace $wsp_R1
+    bindsym $mod+Mod1+n move container to workspace $wsp_R2; workspace $wsp_R2
+    bindsym $mod+Mod1+v move container to workspace $wsp_R3; workspace $wsp_R3
+    bindsym $mod+Mod1+s move container to workspace $wsp_R4; workspace $wsp_R4
+    bindsym $mod+Mod1+z move container to workspace $wsp_R5; workspace $wsp_R5
+    
+    # assign a program to workspace
+    assign [class="Skype"] $wsp_R4
+    assign [class="Cutegram"] $wsp_R4
+    assign [class="cutegram"] $wsp_R4
+    assign [class="gitter"] $wsp_R4
+    assign [class="Xchat"] $wsp_R4
+    assign [class="Totem"] $wsp_R4
+    assign [class="Qtox"] $wsp_R4
+    assign [class="Gajim"] $wsp_R4  
+    assign [class="Rambox"] $wsp_R4
+    assign [class="Vlc"] $wsp_R5
+
+#############################################################################################

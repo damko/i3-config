@@ -1,0 +1,26 @@
+
+######################################################################
+# Scratchpad stuff
+
+# Moves the currently focused window to the scratchpad
+#bindsym $mod+prior move scratchpad
+# keycode 112 = PGUP
+bindcode $mod+112 move scratchpad
+
+# Show the first scratchpad window
+#bindsym $mod+next scratchpad show
+# keycode 117 = PGDOWN
+bindcode $mod+117 scratchpad show
+
+# Moves all floating windows to the scratchpad
+bindsym $mod+shift+x [floating] move scratchpad
+
+# Sends specific windows directly to scratchpad as soon as they open
+for_window [title="terminal4scratchpad"] move scratchpad
+
+# Show the specific scratchpad window, if any is present.
+bindsym mod4+shift+g [title="^Gajim"] scratchpad show
+bindsym mod4+shift+t [title="Thunderbird$"] scratchpad show
+bindsym mod4+shift+c [title="^damko@nitro"] scratchpad show
+
+######################################################################

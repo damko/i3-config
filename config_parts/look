@@ -1,0 +1,85 @@
+
+######################################################################
+# Window colors
+
+# Color constants
+set $black #000000
+set $arch_blue #1793D1
+set $debian_red #D70A53
+set $manjaro_green #2ECC71
+set $plasma_green #18B092
+set $matrix_green #00FF00
+set $mint_green #5FAA24
+set $numix #C84433
+set $ubuntu_orange #F37320
+set $vertex_dark #2C6FF0
+set $white #ffffff
+set $green #00a600
+set $dark_borduau #440000
+set $light_green #adffde
+set $light_blue #0091e2
+set $dark_gray #1f222d
+set $gray #a5a5a5
+set $light_gray #d8d8d8
+set $weird_gray #a9cccd
+set $red #ff0000
+set $ducky #ffcc00
+set $ocra #c8bb2f
+set $purple #e400ff
+#
+set $base00 #101218
+set $base01 #1f222d
+set $base02 #252936
+set $base03 #7780a1
+set $base04 #C0C5CE
+set $base05 #d1d4e0
+set $base06 #C9CCDB
+set $base07 #ffffff
+set $base08 #ee829f
+set $base09 #f99170
+set $base0A #ffefcc
+set $base0B #a5ffe1
+set $base0C #97e0ff
+set $base0D #97bbf7
+set $base0E #c0b7f9
+set $base0F #fcc09e
+
+#                       border        background    text         indicator
+client.focused          $white        $light_blue   $white       $purple
+client.focused_inactive $white        $weird_gray   $dark_gray   $purple
+client.unfocused        $white        $gray         $dark_gray   $purple
+client.urgent           $white        $base08       $dark_gray   $purple
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+	# This handles the block displayed on the menu bar
+        # status_command i3status  # This is the default value for i3
+        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+
+	position top
+
+	#separator_symbol " | "
+
+	# This removes the number at the beginning of the workspace name.
+	# Basically this is a nice trick: by putting a number in front of the
+	# workspace name, the workspaces are always sorted but then the number is
+	# stripped off and the workspaces labels look neat
+	strip_workspace_numbers yes
+
+	colors {
+		#separator $base03
+		separator $black
+		#background $dark_borduau
+		background $ocra
+		statusline $black
+		#statusline $base05
+		#                  border        background      text
+		focused_workspace  $white   	 $light_blue     $white
+		active_workspace   $base03       $base02         $light_blue
+		inactive_workspace $base03       $base02         $base03
+		urgent_workspace   $base03       $base02         $base08
+	}
+}
+
+######################################################################
