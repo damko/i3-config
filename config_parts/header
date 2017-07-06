@@ -2,6 +2,9 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 #
+# DO NOT MODIFY THIS FILE BY HAND because this file gets rewritten each time
+# i3 is started. Modify the files contained in ~/.config/i3/config_parts instead.
+#
 # If you want to generate a new config file, delete
 # this file and run i3-config-wizard
 
