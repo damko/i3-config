@@ -2,6 +2,9 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 #
+# DO NOT MODIFY THIS FILE BY HAND because this file gets rewritten each time
+# i3 is started. Modify the files contained in ~/.config/i3/config_parts instead.
+#
 # If you want to generate a new config file, delete
 # this file and run i3-config-wizard
 
@@ -402,11 +405,20 @@ client.urgent           $white        $base08       $dark_gray   $purple
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+	# This handles the block displayed on the menu bar
+        # status_command i3status  # This is the default value for i3
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        #status_command i3status
+
 	position top
+
 	#separator_symbol " | "
+
+	# This removes the number at the beginning of the workspace name.
+	# Basically this is a nice trick: by putting a number in front of the
+	# workspace name, the workspaces are always sorted but then the number is
+	# stripped off and the workspaces labels look neat
 	strip_workspace_numbers yes
+
 	colors {
 		#separator $base03
 		separator $black
