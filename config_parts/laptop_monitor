@@ -3,7 +3,7 @@
 # Monitors and Workspaces
 
 ###############################################
-# laptop Monitor - LVDS1
+# laptop Monitor - LVDS-1
 ###############################################
 
 	set $wsp_L0 "1:L0"
@@ -25,23 +25,23 @@
 	set $wsp_R5 "14:Media"
 	
 	# Assign workspace to screen
-	workspace $wsp_L0 output LVDS1
-	workspace $wsp_L1 output LVDS1
-	workspace $wsp_L2 output LVDS1
-	workspace $wsp_L3 output LVDS1
+	workspace $wsp_L0 output LVDS-1
+	workspace $wsp_L1 output LVDS-1
+	workspace $wsp_L2 output LVDS-1
+	workspace $wsp_L3 output LVDS-1
 	
-	workspace $wsp_C0 output LVDS1
-	workspace $wsp_C1 output LVDS1
-	workspace $wsp_C2 output LVDS1
-	workspace $wsp_C3 output LVDS1
+	workspace $wsp_C0 output LVDS-1
+	workspace $wsp_C1 output LVDS-1
+	workspace $wsp_C2 output LVDS-1
+	workspace $wsp_C3 output LVDS-1
 
-	workspace $wsp_R0 output LVDS1
-	workspace $wsp_R1 output LVDS1
-	workspace $wsp_R2 output LVDS1
-	workspace $wsp_R3 output LVDS1
+	workspace $wsp_R0 output LVDS-1
+	workspace $wsp_R1 output LVDS-1
+	workspace $wsp_R2 output LVDS-1
+	workspace $wsp_R3 output LVDS-1
 
-	workspace $wsp_R4 output LVDS1
-	workspace $wsp_R5 output LVDS1
+	workspace $wsp_R4 output LVDS-1
+	workspace $wsp_R5 output LVDS-1
 
 	# Bindings for workspace focus
 	bindsym $mod+Ctrl+7 workspace $wsp_L0

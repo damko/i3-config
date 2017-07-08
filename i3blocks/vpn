@@ -1,11 +1,11 @@
 #!/bin/bash
 
-ifconfig | grep tun0 &> /dev/null
+sudo ifconfig | grep tun0 &> /dev/null
 if [ "$?" != "0" ]
 then
    echo "No vpn"
    exit 0
 fi
 
-tun0ip=$(ifconfig tun0 | grep inet | awk {"print $2"} | cut -d: -f2)
+tun0ip=$(sudo ifconfig tun0 | grep inet | awk {'print $2'} | cut -d: -f2)
 echo $tun0ip

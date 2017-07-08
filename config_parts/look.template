@@ -54,10 +54,10 @@ client.urgent           $white        $base08       $dark_gray   $purple
 # finds out, if available)
 bar {
 	# if you comment this then the bar will span across all the availble monitors
-	output DP-1
+	output BAR_OUTPUT
 	
 	# if you comment this then the tray will be displayed on the right monitor
-	tray_output DP-1
+	tray_output BAR_OUTPUT
 
 	# This handles the block displayed on the menu bar
         # status_command i3status  # This is the default value for i3

@@ -9,7 +9,7 @@
 
 
 ###############################################
-# Central HP 24" Monitor - DP1
+# Central HP 24" Monitor - DP-1
 ###############################################
 
     # Set workspaces
@@ -24,15 +24,15 @@
     set $wsp_C3 "8:C3"
     
     # Assign workspace to screen
-    workspace $wsp_L0 output DP1
-    workspace $wsp_L1 output DP1
-    workspace $wsp_L2 output DP1
-    workspace $wsp_L3 output DP1
+    workspace $wsp_L0 output DP-1
+    workspace $wsp_L1 output DP-1
+    workspace $wsp_L2 output DP-1
+    workspace $wsp_L3 output DP-1
 
-    workspace $wsp_C0 output DP1
-    workspace $wsp_C1 output DP1
-    workspace $wsp_C2 output DP1
-    workspace $wsp_C3 output DP1
+    workspace $wsp_C0 output DP-1
+    workspace $wsp_C1 output DP-1
+    workspace $wsp_C2 output DP-1
+    workspace $wsp_C3 output DP-1
 
     # Bindings for workspace focus
     bindsym $mod+Ctrl+7 workspace $wsp_L0
@@ -63,7 +63,7 @@
 	assign [class="Thunderbird"] $wsp_C3
 
 ###############################################
-# Right pivoted HP 24" Monitor - VGA1
+# Right pivoted HP 24" Monitor - VGA-1
 ###############################################
 
     # Set workspaces
@@ -75,12 +75,12 @@
     set $wsp_R5 "14:Media"
 
     # Assign workspace to screen
-    workspace $wsp_R0 output VGA1
-    workspace $wsp_R1 output VGA1
-    workspace $wsp_R2 output VGA1
-    workspace $wsp_R3 output VGA1
-    workspace $wsp_R4 output VGA1
-    workspace $wsp_R5 output VGA1
+    workspace $wsp_R0 output VGA-1
+    workspace $wsp_R1 output VGA-1
+    workspace $wsp_R2 output VGA-1
+    workspace $wsp_R3 output VGA-1
+    workspace $wsp_R4 output VGA-1
+    workspace $wsp_R5 output VGA-1
 
     # Bindings for workspace focus
     bindsym $mod+Ctrl+9 workspace $wsp_R0
