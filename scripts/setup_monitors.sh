@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# This script joins i3 configuration parts into one single configuration file ~/.config/i3/config
-# The parts are joined before i3 starts
-# This script is called by "i3_startup.sh"
-
 me="${0}"
 logger "${me} has been launched ..."
 
@@ -12,17 +8,8 @@ if [ -f ${HOME}/.vars ]; then
 fi
 
 i3_dir="${HOME}/.config/i3"
-# parts_dir="${i3_dir}/config_parts"
 
-# rm ${i3_dir}/config &> /dev/null
-# touch ${i3_dir}/config
 
-# cat ${parts_dir}/header > ${i3_dir}/config
-# cat ${parts_dir}/behavior >> ${i3_dir}/config
-# cat ${parts_dir}/resize >> ${i3_dir}/config
-# cat ${parts_dir}/fonts >> ${i3_dir}/config
-
-####
 # Monitors and Workspaces
 
 # default value

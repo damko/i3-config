@@ -1,5 +1,8 @@
 #!/bin/bash
 
+me="${0}"
+logger "${me} has been launched ..."
+
 # Binding for i3 wm:
 # Normally SuperR (keycode 134) and SuperL (keycode 133) are bond to the label "Mod4"
 # These commands:
@@ -7,8 +10,6 @@
 # * bind SuperR to the label "Mod3".
 # In this way I can set only SuperL (Mod4) as chosen i3 modifier and 
 # by pressing SuperR i3 won't be triggered.
-me="${0}"
-logger "${me} has been launched ..."
 
 xmodmap -e 'remove Mod4 = Super_R' &> /dev/null
 xmodmap -e 'add Mod3 = Super_R' &> /dev/null
@@ -29,6 +30,3 @@ setxkbmap -model kinesis -layout us,us -variant kinesis_adv_dvorak_it,rus -optio
 
 # Sets the repeat-rate for keystrokes
 xset r rate 700 80
-
-
-
