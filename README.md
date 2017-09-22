@@ -16,7 +16,7 @@ Now I can rotate monitor and load my keyboard configuration by just adjusting a 
 
 This is a screenshot of my "L shaped monitor configuration" 
 
-[Imgur](https://i.imgur.com/4sAOjwj.png)
+![Imgur](https://i.imgur.com/4sAOjwj.png)
 
 ## Installation
 
