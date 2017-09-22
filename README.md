@@ -2,9 +2,9 @@
 
 This is my `~/.config/i3 directory`. 
 
-This configuration plays well with this [my other project](https://github.com/damko/gnome3-plus-i3) which lets me run gnome3 with i3 as window manager. 
+This configuration is strictly coupled with this [my other project](https://github.com/damko/gnome3-plus-i3) which lets me run gnome3 with i3 as window manager. 
 
-If you plan to use i3 without gnome3 then you might have to adjust some scripts
+**If you plan to use i3 without gnome3 then you will have to adjust some scripts**
 
 ## What's interesting here
 
@@ -19,7 +19,7 @@ If you don't have i3 installed already:
 
 	apt-get install i3 i3-wm i3blocks i3lock i3status suckless-tools
 
-Then follow the installation instructions from this [other repo](https://github.com/damko/i3-gnome3)
+Then follow the installation instructions from this [other repo](https://github.com/damko/gnome3-plus-i3)
 
 Then pull this repo in your `$HOME` folder
 
