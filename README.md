@@ -9,6 +9,7 @@ This configuration is strictly coupled with this [my other project](https://gith
 ## What's interesting here
 
 I switch monitor layout quite often: I move from one to two or three monitors and I was tired of having several scattered scripts to run in order to adjusts the configuration for each situation.
+
 Finally, I came up with the idea of chunking the i3 config file in parts and to join them every time i3 is loaded accordingly to situation.
 
 Now I can rotate monitor and load my keyboard configuration by just adjusting a couple of variables in my ~/.vars file
