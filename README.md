@@ -15,11 +15,7 @@ Now I can rotate monitor and load my keyboard configuration by just adjusting a 
 
 ## Installation
 
-If you don't have i3 installed already:
-
-	apt-get install i3 i3-wm i3blocks i3lock i3status suckless-tools
-
-Then follow the installation instructions from this [other repo](https://github.com/damko/gnome3-plus-i3)
+Follow the installation instructions from this [other repo](https://github.com/damko/gnome3-plus-i3)
 
 Then pull this repo in your `$HOME` folder
 
