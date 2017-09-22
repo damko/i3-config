@@ -141,11 +141,11 @@ mouse_warping none
 #bindsym --release button2 kill
 
 # The middle button and a modifer over any part of the window kills the window
-bindsym --whole-window $mod+button2 kill
+#bindsym --whole-window $mod+button2 kill
 
 # The right button toggles floating
 #bindsym button3 floating toggle
-bindsym $mod+button3 floating toggle
+#bindsym $mod+button3 floating toggle
 
 # The side buttons move the window around
 #bindsym button9 move left
@@ -208,21 +208,24 @@ font pango:Liberation Mono Regular 10
 ###############################################
 
     # Set workspaces
-    set $wsp_L0 "1:L0"
-    set $wsp_L1 "2:L1"
-    set $wsp_L2 "3:L2"
-    set $wsp_L3 "4:L3"
 
+    # Left workspaces
+    # set $wsp_L0 "1:L0"
+    # set $wsp_L1 "2:L1"
+    # set $wsp_L2 "3:L2"
+    # set $wsp_L3 "4:L3"
+
+    # Central workspaces
     set $wsp_C0 "5:C0"
     set $wsp_C1 "6:C1"
     set $wsp_C2 "7:C2"
     set $wsp_C3 "8:C3"
     
     # Assign workspace to screen
-    workspace $wsp_L0 output DP-1
-    workspace $wsp_L1 output DP-1
-    workspace $wsp_L2 output DP-1
-    workspace $wsp_L3 output DP-1
+    # workspace $wsp_L0 output DP-1
+    # workspace $wsp_L1 output DP-1
+    # workspace $wsp_L2 output DP-1
+    # workspace $wsp_L3 output DP-1
 
     workspace $wsp_C0 output DP-1
     workspace $wsp_C1 output DP-1
@@ -230,10 +233,10 @@ font pango:Liberation Mono Regular 10
     workspace $wsp_C3 output DP-1
 
     # Bindings for workspace focus
-    bindsym $mod+Ctrl+7 workspace $wsp_L0
-    bindsym $mod+Ctrl+g workspace $wsp_L1
-    bindsym $mod+Ctrl+h workspace $wsp_L2
-    bindsym $mod+Ctrl+m workspace $wsp_L3
+    # bindsym $mod+Ctrl+7 workspace $wsp_L0
+    # bindsym $mod+Ctrl+g workspace $wsp_L1
+    # bindsym $mod+Ctrl+h workspace $wsp_L2
+    # bindsym $mod+Ctrl+m workspace $wsp_L3
 
     bindsym $mod+Ctrl+8 workspace $wsp_C0
     bindsym $mod+Ctrl+c workspace $wsp_C1
@@ -241,10 +244,10 @@ font pango:Liberation Mono Regular 10
     bindsym $mod+Ctrl+w workspace $wsp_C3
     
     # move focused container to workspace: Mod1 == Alt. Workspace focus follows the window
-    bindsym $mod+Mod1+7 move container to workspace $wsp_L0; workspace $wsp_L0
-    bindsym $mod+Mod1+g move container to workspace $wsp_L1; workspace $wsp_L1
-    bindsym $mod+Mod1+h move container to workspace $wsp_L2; workspace $wsp_L2
-    bindsym $mod+Mod1+m move container to workspace $wsp_L3; workspace $wsp_L3
+    # bindsym $mod+Mod1+7 move container to workspace $wsp_L0; workspace $wsp_L0
+    # bindsym $mod+Mod1+g move container to workspace $wsp_L1; workspace $wsp_L1
+    # bindsym $mod+Mod1+h move container to workspace $wsp_L2; workspace $wsp_L2
+    # bindsym $mod+Mod1+m move container to workspace $wsp_L3; workspace $wsp_L3
 
     bindsym $mod+Mod1+8 move container to workspace $wsp_C0; workspace $wsp_C0
     bindsym $mod+Mod1+c move container to workspace $wsp_C1; workspace $wsp_C1
@@ -343,7 +346,8 @@ for_window [title="terminal4scratchpad"] move scratchpad
 # Show the specific scratchpad window, if any is present.
 bindsym mod4+shift+g [title="^Gajim"] scratchpad show
 bindsym mod4+shift+t [title="Thunderbird$"] scratchpad show
-bindsym mod4+shift+c [title="^damko@nitro"] scratchpad show
+#bindsym mod4+shift+c [title="^damko@nitro"] scratchpad show
+bindsym mod4+shift+c [title="^terminal4scratchpad"] scratchpad show
 
 ######################################################################
 
@@ -402,7 +406,7 @@ client.urgent           $white        $base08       $dark_gray   $purple
 # finds out, if available)
 bar {
 	# if you comment this then the bar will span across all the availble monitors
-	output DP-1
+	#output DP-1
 	
 	# if you comment this then the tray will be displayed on the right monitor
 	tray_output DP-1
@@ -437,32 +441,30 @@ bar {
 }
 
 ######################################################################
-
-######################################################################
+#############################################################################################
 # Autostart applications
 #
 # DISABLED
-#exec --no-startup-id nm-applet		# network manager systray
-#exec --no-startup-id gksu nm-applet	# example for how to launch an app as root
+#exec --no-startup-id gksu nm-applet                    # example for how to launch an app as root
 #exec --no-startup-id qtox
 #exec --no-startup-id gitter
-#exec /home/damko/applications/ricochet
-#exec --no-startup-id glipper	# clipboard manager
-#exec_always parcellite			# clipboard manager
 #exec --no-startup-id gajim
 #exec --no-startup-id rambox
 #exec --no-startup-id nextcloud
-#exec --no-startup-id insync
+#exec --no-startup-id pasystray                         # pulseaudio systray. use pavucontrol to fine tune pulseaudio
+#exec --no-startup-id nitrogen --restore                # sets a picture as wallpaper in i3
+#exec --no-startup-id sudo service openvpn restart
+#exec --no-startup-id skypeforlinux
+#exec --no-startup-id parcellite                        # clipboard applet
+#exec gnome-screensaver &                               # starts gnome3 screensaver daemon
 
-
-exec gnome-terminal --title="terminal4scratchpad" --hide-menubar &> /dev/null
-exec_always gnome-settings-daemon &	# starts gnome3 settings daemon
-exec_always gnome-screensaver &		# starts gnome3 screensaver daemon
-exec_always --no-startup-id tracker daemon -t all
-exec_always --no-startup-id tracker daemon -s
-exec --no-startup-id parcellite         #clipboard applet
-exec --no-startup-id pasystray 		# pulseaudio systray. use pavucontrol to fine tune pulseaudio
-exec --no-startup-id workrave		# this enables kbd and mouse statistics
-
-
-######################################################################
+# ACTIVE
+exec --no-startup-id nm-applet                          # network manager systray
+# #exec_always --no-startup-id tracker daemon -t all
+# #exec_always --no-startup-id tracker daemon -s
+exec --no-startup-id workrave                           # kbd and mouse statistics
+exec gnome-terminal --title="terminal4scratchpad" --hide-menubar
+exec --no-startup-id rambox                             # multichat client
+exec --no-startup-id insync start
+exec --no-startup-id /home/damko/.config/i3/scripts/kinesis.sh    # I need to re-run this because gnome overrides the settings
+#############################################################################################

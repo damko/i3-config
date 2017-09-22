@@ -21,6 +21,7 @@ for_window [title="terminal4scratchpad"] move scratchpad
 # Show the specific scratchpad window, if any is present.
 bindsym mod4+shift+g [title="^Gajim"] scratchpad show
 bindsym mod4+shift+t [title="Thunderbird$"] scratchpad show
-bindsym mod4+shift+c [title="^damko@nitro"] scratchpad show
+#bindsym mod4+shift+c [title="^damko@nitro"] scratchpad show
+bindsym mod4+shift+c [title="^terminal4scratchpad"] scratchpad show
 
 ######################################################################

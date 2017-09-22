@@ -7,6 +7,9 @@
 # * bind SuperR to the label "Mod3".
 # In this way I can set only SuperL (Mod4) as chosen i3 modifier and 
 # by pressing SuperR i3 won't be triggered.
+me="${0}"
+logger "${me} has been launched ..."
+
 xmodmap -e 'remove Mod4 = Super_R' &> /dev/null
 xmodmap -e 'add Mod3 = Super_R' &> /dev/null
 

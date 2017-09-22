@@ -6,10 +6,10 @@
 # laptop Monitor - LVDS-1
 ###############################################
 
-	set $wsp_L0 "1:L0"
-	set $wsp_L1 "2:L1"
-	set $wsp_L2 "3:L2"
-	set $wsp_L3 "4:L3"
+#	set $wsp_L0 "1:L0"
+#	set $wsp_L1 "2:L1"
+#	set $wsp_L2 "3:L2"
+#	set $wsp_L3 "4:L3"
 
 	set $wsp_C0 "5:C0"
 	set $wsp_C1 "6:C1"
@@ -25,10 +25,10 @@
 	set $wsp_R5 "14:Media"
 	
 	# Assign workspace to screen
-	workspace $wsp_L0 output LVDS-1
-	workspace $wsp_L1 output LVDS-1
-	workspace $wsp_L2 output LVDS-1
-	workspace $wsp_L3 output LVDS-1
+#	workspace $wsp_L0 output LVDS-1
+#	workspace $wsp_L1 output LVDS-1
+#	workspace $wsp_L2 output LVDS-1
+#	workspace $wsp_L3 output LVDS-1
 	
 	workspace $wsp_C0 output LVDS-1
 	workspace $wsp_C1 output LVDS-1
@@ -44,10 +44,10 @@
 	workspace $wsp_R5 output LVDS-1
 
 	# Bindings for workspace focus
-	bindsym $mod+Ctrl+7 workspace $wsp_L0
-	bindsym $mod+Ctrl+g workspace $wsp_L1
-	bindsym $mod+Ctrl+h workspace $wsp_L2
-	bindsym $mod+Ctrl+m workspace $wsp_L3
+#	bindsym $mod+Ctrl+7 workspace $wsp_L0
+#	bindsym $mod+Ctrl+g workspace $wsp_L1
+#	bindsym $mod+Ctrl+h workspace $wsp_L2
+#	bindsym $mod+Ctrl+m workspace $wsp_L3
 
 	bindsym $mod+Ctrl+8 workspace $wsp_C0
 	bindsym $mod+Ctrl+c workspace $wsp_C1
@@ -63,10 +63,10 @@
 	bindsym $mod+Ctrl+z workspace $wsp_R5
 	
 	# move focused container to workspace: Mod1 == Alt. Workspace focus follows the window
-	bindsym $mod+Mod1+7 move container to workspace $wsp_L0; workspace $wsp_L0
-	bindsym $mod+Mod1+g move container to workspace $wsp_L1; workspace $wsp_L1
-	bindsym $mod+Mod1+h move container to workspace $wsp_L2; workspace $wsp_L2
-	bindsym $mod+Mod1+m move container to workspace $wsp_L3; workspace $wsp_L3
+#	bindsym $mod+Mod1+7 move container to workspace $wsp_L0; workspace $wsp_L0
+#	bindsym $mod+Mod1+g move container to workspace $wsp_L1; workspace $wsp_L1
+#	bindsym $mod+Mod1+h move container to workspace $wsp_L2; workspace $wsp_L2
+#	bindsym $mod+Mod1+m move container to workspace $wsp_L3; workspace $wsp_L3
 
 	bindsym $mod+Mod1+8 move container to workspace $wsp_C0; workspace $wsp_C0
 	bindsym $mod+Mod1+c move container to workspace $wsp_C1; workspace $wsp_C1

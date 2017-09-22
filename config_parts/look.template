@@ -54,7 +54,7 @@ client.urgent           $white        $base08       $dark_gray   $purple
 # finds out, if available)
 bar {
 	# if you comment this then the bar will span across all the availble monitors
-	output BAR_OUTPUT
+	#output BAR_OUTPUT
 	
 	# if you comment this then the tray will be displayed on the right monitor
 	tray_output BAR_OUTPUT

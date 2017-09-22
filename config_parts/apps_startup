@@ -1,29 +1,27 @@
-
-######################################################################
+#############################################################################################
 # Autostart applications
 #
 # DISABLED
-#exec --no-startup-id nm-applet		# network manager systray
-#exec --no-startup-id gksu nm-applet	# example for how to launch an app as root
+#exec --no-startup-id gksu nm-applet                    # example for how to launch an app as root
 #exec --no-startup-id qtox
 #exec --no-startup-id gitter
-#exec /home/damko/applications/ricochet
-#exec --no-startup-id glipper	# clipboard manager
-#exec_always parcellite			# clipboard manager
 #exec --no-startup-id gajim
 #exec --no-startup-id rambox
 #exec --no-startup-id nextcloud
-#exec --no-startup-id insync
+#exec --no-startup-id pasystray                         # pulseaudio systray. use pavucontrol to fine tune pulseaudio
+#exec --no-startup-id nitrogen --restore                # sets a picture as wallpaper in i3
+#exec --no-startup-id sudo service openvpn restart
+#exec --no-startup-id skypeforlinux
+#exec --no-startup-id parcellite                        # clipboard applet
+#exec gnome-screensaver &                               # starts gnome3 screensaver daemon
 
-
-exec gnome-terminal --title="terminal4scratchpad" --hide-menubar &> /dev/null
-exec_always gnome-settings-daemon &	# starts gnome3 settings daemon
-exec_always gnome-screensaver &		# starts gnome3 screensaver daemon
-exec_always --no-startup-id tracker daemon -t all
-exec_always --no-startup-id tracker daemon -s
-exec --no-startup-id parcellite         #clipboard applet
-exec --no-startup-id pasystray 		# pulseaudio systray. use pavucontrol to fine tune pulseaudio
-exec --no-startup-id workrave		# this enables kbd and mouse statistics
-
-
-######################################################################
+# ACTIVE
+exec --no-startup-id nm-applet                          # network manager systray
+# #exec_always --no-startup-id tracker daemon -t all
+# #exec_always --no-startup-id tracker daemon -s
+exec --no-startup-id workrave                           # kbd and mouse statistics
+exec gnome-terminal --title="terminal4scratchpad" --hide-menubar
+exec --no-startup-id rambox                             # multichat client
+exec --no-startup-id insync start
+exec --no-startup-id /home/damko/.config/i3/scripts/kinesis.sh    # I need to re-run this because gnome overrides the settings
+#############################################################################################

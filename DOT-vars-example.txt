@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# This file contains environment variables for the user.
+# This file is loaded by ~/.bashrc_custom
+
+
+export LANGUAGE=en
+export LANG=en_US.UTF-8
+#export LC_NUMERIC=en_US.UTF-8
+#export LC_TIME=en_US.UTF-8
+#export LC_MONETARY=en_US.UTF-8
+#export LC_PAPER=en_US.UTF-8
+#export LC_NAME=en_US.UTF-8
+#export LC_ADDRESS=en_US.UTF-8
+#export LC_TELEPHONE=en_US.UTF-8
+#export LC_MEASUREMENT=en_US.UTF-8
+#export LC_IDENTIFICATION=en_US.UTF-8
+
+export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_DATA_HOME="${HOME}/.local/share"
+#export TZ='Europe/Sofia'; 
+export TZ='Europe/Rome'; 
+
+# Possible values: 
+# > laptop_monitor: just the laptop screen
+# > two_monitors_L_shaped: laptop screen off, 1 external VGA monitor and 1 external DP monitor
+# > three_monitors_H_shaped: 3 DP external monitors
+export SCREEN_LAYOUT="two_monitors_L_shaped" 
+#export SCREEN_LAYOUT="laptop_monitor" 
+
+# most common options: LVDS-1 (laptop mode) or DP-1 (external monitor)
+export BAR_OUTPUT="DP-1"
+if [ ${SCREEN_LAYOUT} == "laptop_monitor" ]; then
+	export BAR_OUTPUT="LVDS-1"
+fi
+
+# Possible values: default|kinesis
+export KEYBOARD="kinesis"
