@@ -14,6 +14,10 @@ Finally, I came up with the idea of chunking the i3 config file in parts and to 
 
 Now I can rotate monitor and load my keyboard configuration by just adjusting a couple of variables in my ~/.vars file
 
+This is a screenshot of my "L shaped monitor configuration" 
+
+[Imgur](https://i.imgur.com/4sAOjwj.png)
+
 ## Installation
 
 Follow the installation instructions from this [other repo](https://github.com/damko/gnome3-plus-i3)
