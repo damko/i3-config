@@ -1,6 +1,6 @@
-# i3 configuration directory
+# My i3 configuration
 
-This is my `~/.config/i3 directory`. 
+This is my `~/.config/i3` directory. 
 
 This configuration is strictly coupled with this [my other project](https://github.com/damko/gnome3-plus-i3) which lets me run gnome3 with i3 as window manager. 
 
